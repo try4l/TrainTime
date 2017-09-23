@@ -1,0 +1,76 @@
+body {
+    background: #CCC;
+}
+
+#station-marquee {
+    height: 275px;
+}
+
+#station-clock {
+    float: right;
+    margin-right: 25px; 
+}
+
+#clock {
+    width: 200px;
+    height: 200px;
+    background: #cdf;
+    border-radius: 50%;
+    position: relative;
+}
+
+#dot {
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 12;
+}
+
+#sec {
+    width: 2px;
+    height: 80px;
+    background: red;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 20px;
+    margin: auto;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+    z-index: 10;
+}
+
+#min {
+    width: 4px;
+    height: 75px;
+    background: black;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 25px;
+    margin: auto;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+    z-index: 8;
+}
+
+#hour {
+    width: 4px;
+    height: 50px;
+    background: black;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50px;
+    margin: auto;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+    z-index: 6;
+}

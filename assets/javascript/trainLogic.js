@@ -1,3 +1,4 @@
+
 // Initialize Firebase (YOUR OWN APP)
 // Make sure that your configuration matches your firebase script version
 // (Ex. 3.0 != 3.7.1)
@@ -19,7 +20,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// 2. Button for adding Employees
+// 2. Button for adding Trains
 $("#add-train-btn").on("click", function(event) {
   console.log("click");
   event.preventDefault();
@@ -31,6 +32,7 @@ $("#add-train-btn").on("click", function(event) {
 
   // First Time (pushed back 1 year to make sure it comes before current time)
   var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
+
   var expTime = moment($("#first-time").val().trim(), "HH:mm").format("X");
 
   //moment($("#first-time").val().trim(), "hh:mm").subtract(1, "years");
@@ -56,13 +58,7 @@ $("#add-train-btn").on("click", function(event) {
 
 
   // Save the new values in Firebase
-  //database.ref().push({newTrain});
   database.ref().push(newTrain);
-  // database.ref().push(newTrain.name);
-  // database.ref().push(newTrain.destination);
-  // database.ref().push(newTrain.firstTimeConverted);
-  // database.ref().push(newTrain.frequency);
-
 
   // Logs everything to console
   console.log("-name: ", newTrain.name);
@@ -70,8 +66,8 @@ $("#add-train-btn").on("click", function(event) {
   console.log("-firstTime: ", newTrain.firstTime);
   console.log("-frequency: ", newTrain.frequency);
 
-    // Alert
-  alert("Train added.");
+  // Alert
+  //alert("Train added.");
 
   // Clears all of the text-boxes
   $("#name").val("");
@@ -80,18 +76,6 @@ $("#add-train-btn").on("click", function(event) {
   $("#frequency").val("");
 
 });  
-
-
-  // Whenever a user clicks the submit-bid button
-  // $("#submit").on("click", function(event) {
-  // // Prevent form from submitting
-  // event.preventDefault();
-
-  // // Get the input values
-  // var name = $("#name").val().trim();
-  // var destination = $("#destination").val().trim();
-  // var firstTime = $("first-time").val().trim();
-  // var frequency = $("#frequency").val().trim();
 
 // 3. Create Firebase event for adding train to the database and a row in the html when the user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
@@ -108,7 +92,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log("name: ", name);  
   console.log("destination: ", destination);
   console.log("firstTime: ", firstTime);
-  //console.log("firstTimeConverted: ", firstTimeConverted)
   console.log("frequency: ", frequency);
 
 

@@ -5,10 +5,13 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>Employee Tracker</title>
+    <title>Train Tracker</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Clock -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -23,11 +26,28 @@
 
   <body>
 
+
+
     <!-- Train Tracker -->
     <div class="container">
 
+    <!-- Train Clock -->
+    <div class="pnl pnl-primary" id="station-clock">
+      <div class="pnl-heading" id="clk-title">
+        <h3 class="pnl-title"><strong>Station Clock</strong></h3>
+      </div>
+      <div class="pnl-body">
+        <div id="clock">
+          <div id="dot"></div>
+          <div id="hour"></div>
+          <div id="min"></div>
+          <div id="sec"></div>
+        </div>
+      </div> <!-- pnl-body -->
+    </div>  <!-- station clock -->
+
       <!-- Jumbotron -->
-      <div class="jumbotron">
+      <div class="jumbotron" id="station-marquee">
         <h1 class="text-center">Train Time</h1>
         <h3 class="text-center">All Aboard!</h3>
       </div>
@@ -97,7 +117,9 @@
     </div>  <!-- container -->
 
     <!-- JavaScript -->
+    <script src="assets/javascript/trainClock.js"></script>   <!-- JSFiddle -->
     <script src="assets/javascript/trainLogic.js"></script>
+    
 
   </body>
 
