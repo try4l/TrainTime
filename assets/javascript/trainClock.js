@@ -1,6 +1,6 @@
 // From unkown contributor on JSFiddle
 
-//use requestAnimationFrame for smoothness (shimmed with setTimeout fallback)
+//use requestAnimationFrame for smoothness (shimmed with setTimeout callback)
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
           window.webkitRequestAnimationFrame ||

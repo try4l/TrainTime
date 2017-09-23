@@ -15,7 +15,6 @@ var config = {
     messagingSenderId: "1058895433958"
 };
 
-
 firebase.initializeApp(config);
 
 var database = firebase.database();
@@ -34,8 +33,6 @@ $("#add-train-btn").on("click", function(event) {
   var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
 
   var expTime = moment($("#first-time").val().trim(), "HH:mm").format("X");
-
-  //moment($("#first-time").val().trim(), "hh:mm").subtract(1, "years");
 
   console.log("moment()" , moment());
   console.log("firstTime: ", firstTime);
@@ -94,7 +91,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log("firstTime: ", firstTime);
   console.log("frequency: ", frequency);
 
-
   // First Time (pushed back 1 year to make sure it comes before current time)
   var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
   console.log("firstTimeConverted", firstTimeConverted);
@@ -124,3 +120,4 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   $("#train-table > tbody").append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" +
   frequency + "</td><td>" + nextArrival + "</td><td>" + minutesTillTrain + "</td></tr>");
 });
+
